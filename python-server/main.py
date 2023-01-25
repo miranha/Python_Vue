@@ -6,7 +6,7 @@ CORS(app)
 
 @app.route('/hello', methods=['GET'])
 def hello():
-    print("Fromd terminal...Miran")
+    print("Fromd tsserminal...Miran")
     return "Hello, World!"
 
 @app.route('/value', methods=['POST'])
