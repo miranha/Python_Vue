@@ -1,0 +1,16 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./docker-app
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+  backend:
+    build:
+      context: ./python-server
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - frontend
