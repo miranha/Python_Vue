@@ -7,19 +7,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'which docker-compose'
-                sh 'docker-compose build'
+                sh '/usr/local/bin/docker-compose build'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'docker-compose up -d'
+                sh '/usr/local/bin/docker-compose up -d'
             }
         }
     }
     post {
         always {
-            sh 'docker-compose down'
+            sh '/usr/local/bin/docker-compose down'
         }
     }
 }
