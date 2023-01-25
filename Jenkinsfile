@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'which docker-compose'
                 sh 'docker-compose build'
             }
         }
